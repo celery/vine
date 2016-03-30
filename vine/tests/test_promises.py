@@ -1,7 +1,10 @@
 from __future__ import absolute_import, unicode_literals
 
+import traceback
 from collections import deque
 from struct import pack, unpack
+
+import sys
 
 from vine.funtools import wrap
 from vine.promises import promise
@@ -221,6 +224,65 @@ class test_promise(Case):
 
         p.throw(KeyError())
         p.throw1(KeyError())
+
+    def test_cancel_no_cb(self):
+        p = promise()
+        p.cancel()
+        self.assertTrue(p.cancelled)
+        self.assertEqual(p.on_error, None)
+        p.throw(KeyError())
+
+    def test_throw_no_exc(self):
+        p = promise()
+        with self.assertRaises((TypeError, RuntimeError)):
+            p.throw()
+
+    def test_throw_no_excinfo(self):
+        p = promise()
+        with self.assertRaises(KeyError):
+            p.throw(KeyError())
+
+    def test_throw_with_tb(self):
+        p = promise()
+
+        def foo():
+            raise KeyError()
+
+        try:
+            foo()
+        except KeyError:
+            try:
+                p.throw()
+            except KeyError:
+                err = traceback.format_exc()
+                self.assertIn("in foo\n    raise KeyError()", err)
+            else:
+                raise AssertionError("Did not throw.")
+
+    def test_throw_with_other_tb(self):
+        p = promise()
+
+        def foo():
+            raise KeyError()
+
+        def bar():
+            raise ValueError()
+
+        try:
+            bar()
+        except ValueError:
+            tb = sys.exc_info()[2]
+
+        try:
+            foo()
+        except KeyError as exc:
+            try:
+                p.throw(exc, tb)
+            except KeyError:
+                err = traceback.format_exc()
+                self.assertIn("in bar\n    raise ValueError()", err)
+            else:
+                raise AssertionError("Did not throw.")
 
     def test_throw_None(self):
         try:
