@@ -5,6 +5,7 @@ import sys
 from collections import deque
 
 from .abstract import Thenable
+from .five import reraise
 
 __all__ = ['promise']
 
@@ -128,7 +129,7 @@ class promise(object):
                 retval = self.fun(*final_args, **final_kwargs)
                 self.value = (ca, ck) = (retval,), {}
             except Exception:
-                return self.set_error_state()
+                return self.throw()
         else:
             self.value = (ca, ck) = final_args, final_kwargs
         self.ready = True
@@ -176,7 +177,7 @@ class promise(object):
         if self.on_error:
             self.on_error(exc)
 
-    def set_error_state(self, exc=None):
+    def throw(self, exc=None, tb=None):
         if self.cancelled:
             return
         _exc = sys.exc_info()[1] if exc is None else exc
@@ -199,7 +200,7 @@ class promise(object):
             if self.on_error is None:
                 if exc is None:
                     raise
-                raise exc
+                reraise(type(exc), exc, tb)
 
     @property
     def listeners(self):
@@ -207,11 +208,4 @@ class promise(object):
             return self._lvpending
         return [self._svpending]
 
-    def throw(self, exc=None):
-        if exc is None:
-            return self.set_error_state()
-        try:
-            raise exc
-        except exc.__class__ as with_cause:
-            self.set_error_state(with_cause)
 Thenable.register(promise)
