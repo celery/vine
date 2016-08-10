@@ -5,7 +5,7 @@
 |build-status| |coverage| |bitdeli|
 
 :Version: 1.1.1
-:Web: http://vine.readthedocs.org/
+:Web: https://vine.readthedocs.io/
 :Download: http://pypi.python.org/pypi/vine/
 :Source: http://github.com/celery/vine/
 :Keywords: promise, async, future

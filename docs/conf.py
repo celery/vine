@@ -9,7 +9,7 @@ globals().update(conf.build_config(
     description='Python Promises',
     # version_dev='2.0',
     # version_stable='1.0',
-    canonical_url='http://vine.readthedocs.org',
+    canonical_url='https://vine.readthedocs.io',
     webdomain='celeryproject.org',
     github_project='celery/vine',
     author='Ask Solem & contributors',
