@@ -236,7 +236,7 @@ else:
     exec_("""def reraise(tp, value, tb=None): raise tp, value, tb""")
 
 
-def with_metaclass(Type, skip_attrs={'__dict__', '__weakref__'}):
+def with_metaclass(Type, skip_attrs=None):
     """Class decorator to set metaclass.
 
     Works with both Python 2 and Python 3 and it does not add
@@ -244,6 +244,9 @@ def with_metaclass(Type, skip_attrs={'__dict__', '__weakref__'}):
     (that is -- it copies the original class instead of using inheritance).
 
     """
+    if skip_attrs is None:
+        skip_attrs = {'__dict__', '__weakref__'}
+
     def _clone_with_metaclass(Class):
         attrs = {key: value for key, value in items(vars(Class))
                  if key not in skip_attrs}
