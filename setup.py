@@ -109,6 +109,7 @@ setuptools.setup(
     license='BSD',
     install_requires=[],
     tests_require=reqs('test.txt'),
+    test_suite = 't/unit',
     cmdclass={'test': pytest},
     zip_safe=False,
     include_package_data=False,
