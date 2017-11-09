@@ -342,17 +342,7 @@ def python_2_non_unicode_str(cls):
 
 
 try:  # pragma: no cover
-    from inspect import formatargspec, getfullargspec
+    from inspect import getfullargspec
 except ImportError:  # Py2
-    from collections import namedtuple
-    from inspect import formatargspec, getargspec as _getargspec  # noqa
-
-    FullArgSpec = namedtuple('FullArgSpec', (
-        'args', 'varargs', 'varkw', 'defaults',
-        'kwonlyargs', 'kwonlydefaults', 'annotations',
-    ))
-
-    def getfullargspec(fun, _fill=(None, ) * 3):  # noqa
-        """For compatibility with Python 3."""
-        s = _getargspec(fun)
-        return FullArgSpec(*s + _fill)
+    from inspect import getargspec as _getargspec
+    getfullargspec = _getargspec
