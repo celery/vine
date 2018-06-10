@@ -19,12 +19,12 @@
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/vine.svg
     :alt: Vine can be installed via wheel
-    :target: http://pypi.python.org/pypi/vine/
+    :target: https://pypi.org/project/vine/
 
 .. |pyversion| image:: https://img.shields.io/pypi/pyversions/vine.svg
     :alt: Supported Python versions.
-    :target: http://pypi.python.org/pypi/vine/
+    :target: https://pypi.org/project/vine/
 
 .. |pyimp| image:: https://img.shields.io/pypi/implementation/vine.svg
     :alt: Support Python implementations.
-    :target: http://pypi.python.org/pypi/vine/
+    :target: https://pypi.org/project/vine/

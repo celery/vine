@@ -1,6 +1,6 @@
 :Version: 1.1.4
 :Web: https://vine.readthedocs.io/
-:Download: http://pypi.python.org/pypi/vine/
+:Download: https://pypi.org/project/vine/
 :Source: http://github.com/celery/vine/
 :Keywords: promise, async, future
 

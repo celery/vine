@@ -6,7 +6,7 @@
 
 :Version: 1.1.4
 :Web: https://vine.readthedocs.io/
-:Download: http://pypi.python.org/pypi/vine/
+:Download: https://pypi.org/project/vine/
 :Source: http://github.com/celery/vine/
 :Keywords: promise, async, future
 
@@ -27,13 +27,13 @@ About
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/vine.svg
     :alt: Vine can be installed via wheel
-    :target: http://pypi.python.org/pypi/vine/
+    :target: https://pypi.org/project/vine/
 
 .. |pyversion| image:: https://img.shields.io/pypi/pyversions/vine.svg
     :alt: Supported Python versions.
-    :target: http://pypi.python.org/pypi/vine/
+    :target: https://pypi.org/project/vine/
 
 .. |pyimp| image:: https://img.shields.io/pypi/implementation/vine.svg
     :alt: Support Python implementations.
-    :target: http://pypi.python.org/pypi/vine/
+    :target: https://pypi.org/project/vine/
 
