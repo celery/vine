@@ -3,9 +3,7 @@ from __future__ import absolute_import, unicode_literals
 
 import abc
 
-from collections import Callable
-
-from .five import with_metaclass
+from .five import with_metaclass, Callable
 
 __all__ = ['Thenable']
 

@@ -30,7 +30,7 @@ except NameError:  # pragma: no cover
 bytes_t = bytes
 
 __all__ = [
-    'Counter', 'reload', 'UserList', 'UserDict',
+    'Counter', 'reload', 'UserList', 'UserDict', 'Callable',
     'Queue', 'Empty', 'Full', 'LifoQueue', 'builtins', 'array',
     'zip_longest', 'map', 'zip', 'string', 'string_t', 'bytes_t',
     'bytes_if_py2', 'long_t', 'text_t', 'int_types', 'module_name_t',
@@ -62,6 +62,11 @@ try:
     from collections import UserDict        # noqa
 except ImportError:                         # pragma: no cover
     from UserDict import UserDict           # noqa
+
+try:
+    from collections.abc import Callable    # noqa
+except ImportError:                         # pragma: no cover
+    from collections import Callable        # noqa
 
 #  ############# time.monotonic #############################################
 
