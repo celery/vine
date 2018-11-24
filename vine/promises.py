@@ -4,7 +4,13 @@ from __future__ import absolute_import, unicode_literals
 import sys
 
 from collections import deque
+import inspect
 from weakref import ref
+
+try:
+    from weakref import WeakMethod
+except ImportError:
+    from vine.backports.weakref_backports import WeakMethod
 
 from .abstract import Thenable
 from .five import python_2_unicode_compatible, reraise
@@ -87,7 +93,7 @@ class promise(object):
     def __init__(self, fun=None, args=None, kwargs=None,
                  callback=None, on_error=None, weak=False):
         self.weak = weak
-        self.fun = ref(fun) if self.weak else fun
+        self.fun = self._get_fun_or_weakref(fun=fun, weak=weak)
         self.args = args or ()
         self.kwargs = kwargs or {}
         self.ready = False
@@ -108,6 +114,20 @@ class promise(object):
 
         if self.fun:
             assert self.fun and callable(fun)
+
+    @staticmethod
+    def _get_fun_or_weakref(fun, weak):
+        """Return the callable or a weak reference.
+
+        Handles both bound and unbound methods.
+        """
+        if not weak:
+            return fun
+
+        if inspect.ismethod(fun):
+            return WeakMethod(fun)
+        else:
+            return ref(fun)
 
     def __repr__(self):
         return ('<{0} --> {1!r}>' if self.fun else '<{0}>').format(

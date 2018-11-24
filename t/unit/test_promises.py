@@ -6,6 +6,7 @@ import traceback
 
 from collections import deque
 from struct import pack, unpack
+import weakref
 
 from case import Mock
 
@@ -323,3 +324,26 @@ class test_promise:
         d = promise(Mock(name='d'), on_error=de)
         p2.then(d)
         de.fun.assert_called_with(exc)
+
+    def test_weak_reference_unbound(self):
+        def f(x):
+            return x ** 2
+
+        promise_f = promise(f, weak=True)
+
+        assert isinstance(promise_f.fun, weakref.ref)
+        assert promise_f(2) == 4
+
+    def test_weak_reference_bound(self):
+        class Example(object):
+            def __init__(self, y):
+                self.y = y
+
+            def f(self, x):
+                return self.y + x ** 2
+
+        example = Example(5)
+        promise_f = promise(example.f, weak=True)
+
+        assert isinstance(promise_f.fun, weakref.ref)
+        assert promise_f(2) == 9
