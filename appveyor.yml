@@ -33,7 +33,6 @@ environment:
 build: off
 
 install:
-  - "powershell extra\\appveyor\\install.ps1"
   - "py -3.7 -m pip install -U pip setuptools wheel tox tox-appveyor"
 
 test_script:
