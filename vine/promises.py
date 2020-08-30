@@ -12,7 +12,7 @@ __all__ = ['promise']
 
 
 @Thenable.register
-class promise(object):
+class promise:
     """Promise of future evaluation.
 
     This is a special implementation of promises in that it can
@@ -124,7 +124,7 @@ class promise(object):
 
     def __repr__(self):
         return ('<{0} --> {1!r}>' if self.fun else '<{0}>').format(
-            '{0}@0x{1:x}'.format(type(self).__name__, id(self)), self.fun,
+            f'{type(self).__name__}@0x{id(self):x}', self.fun,
         )
 
     def cancel(self):

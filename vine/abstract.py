@@ -37,7 +37,7 @@ class Thenable(Callable, metaclass=abc.ABCMeta):  # pragma: no cover
 
 
 @Thenable.register
-class ThenableProxy(object):
+class ThenableProxy:
     """Proxy to object that supports ``.then()``."""
 
     def _set_promise_target(self, p):
