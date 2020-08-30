@@ -1,4 +1,4 @@
-dist: xenial
+dist: bionic
 language: python
 cache: pip
 
@@ -12,21 +12,21 @@ env:
 
 matrix:
   include:
-    - python: 3.5
-      env: TOXENV=3.5
     - python: 3.6
       env: TOXENV=3.6
     - python: 3.7
       env: TOXENV=3.7
-    - python: pypy3.5-6.0
+    - python: 3.8
+      env: TOXENV=3.8
+    - python: pypy3.6-7.3.1
       env: TOXENV=pypy3
-    - python: 3.7
+    - python: 3.8
       env: TOXENV=flake8
       stage: lint
-    - python: 3.7
+    - python: 3.8
       env: TOXENV=apicheck
       stage: lint
-    - python: 3.7
+    - python: 3.8
       env: TOXENV=pydocstyle
       stage: lint
 
