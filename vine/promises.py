@@ -43,7 +43,6 @@ class promise:
         >>> p(30)
 
     Example:
-
     .. code-block:: python
 
         from vine import promise, wrap
