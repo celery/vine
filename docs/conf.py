@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from sphinx_celery import conf
 
 globals().update(conf.build_config(

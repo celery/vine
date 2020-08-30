@@ -18,7 +18,7 @@ class test_promise:
 
         _pending = deque()
 
-        class Protocol(object):
+        class Protocol:
 
             def __init__(self):
                 self.buffer = []
@@ -355,7 +355,7 @@ class test_promise:
         assert promise_f(2) == 4
 
     def test_weak_reference_bound(self):
-        class Example(object):
+        class Example:
             def __init__(self, y):
                 self.y = y
 
