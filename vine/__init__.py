@@ -1,4 +1,4 @@
-"""Promises, promises, promises."""
+"""Python promises"""
 import re
 
 from collections import namedtuple
@@ -15,7 +15,7 @@ from .funtools import (
 __version__ = '5.0.0'
 __author__ = 'Ask Solem'
 __contact__ = 'ask@celeryproject.org'
-__homepage__ = 'http://github.com/celery/vine'
+__homepage__ = 'https://github.com/celery/vine'
 __docformat__ = 'restructuredtext'
 
 # -eof meta-

@@ -7,12 +7,16 @@
 :Version: 5.0.0
 :Web: https://vine.readthedocs.io/
 :Download: https://pypi.org/project/vine/
-:Source: http://github.com/celery/vine/
+:Source: https://github.com/celery/vine/
 :Keywords: promise, async, future
 
 About
 =====
 
+This is a special implementation of promises in that it can be used both
+for promise of a value and lazy evaluation. The biggest upside for this
+is that everything in a promise can also be a promise, e.g. filters,
+callbacks and errbacks can all be promises.
 
 .. |build-status| image:: https://secure.travis-ci.org/celery/vine.png?branch=master
     :alt: Build status
