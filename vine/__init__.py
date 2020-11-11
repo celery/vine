@@ -1,4 +1,4 @@
-"""Python promises"""
+"""Python promises."""
 import re
 
 from collections import namedtuple
