@@ -4,9 +4,8 @@ import traceback
 
 from collections import deque
 from struct import pack, unpack
+from unittest.mock import Mock
 import weakref
-
-from case import Mock
 
 from vine.funtools import wrap
 from vine.promises import promise
