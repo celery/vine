@@ -1,9 +1,6 @@
 """Python compatibility utilities."""
-from functools import (
-    WRAPPER_ASSIGNMENTS, WRAPPER_UPDATES,
-    update_wrapper as _update_wrapper,
-    partial,
-)
+from functools import WRAPPER_ASSIGNMENTS, WRAPPER_UPDATES, partial
+from functools import update_wrapper as _update_wrapper
 
 __all__ = ['update_wrapper', 'wraps']
 

@@ -1,11 +1,16 @@
-import pytest
-
 from unittest.mock import Mock
+
+import pytest
 
 from vine.abstract import Thenable
 from vine.funtools import (
-    maybe_promise, ppartial, preplace,
-    ready_promise, starpromise, transform, wrap,
+    maybe_promise,
+    ppartial,
+    preplace,
+    ready_promise,
+    starpromise,
+    transform,
+    wrap,
 )
 from vine.promises import promise
 

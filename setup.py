@@ -1,8 +1,8 @@
 #!/usr/bin/env python
+import codecs
 import os
 import re
 import sys
-import codecs
 
 import setuptools
 import setuptools.command.test

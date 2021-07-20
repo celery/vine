@@ -1,9 +1,8 @@
 """Promise implementation."""
-import sys
-
-from collections import deque
 import inspect
-from weakref import ref, WeakMethod
+import sys
+from collections import deque
+from weakref import WeakMethod, ref
 
 from .abstract import Thenable
 from .utils import reraise

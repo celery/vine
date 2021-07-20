@@ -1,16 +1,19 @@
 """Python promises."""
 import re
-
 from collections import namedtuple
 
 from .abstract import Thenable
+from .funtools import (
+    ensure_promise,
+    maybe_promise,
+    ppartial,
+    preplace,
+    starpromise,
+    transform,
+    wrap,
+)
 from .promises import promise
 from .synchronization import barrier
-from .funtools import (
-    maybe_promise, ensure_promise,
-    ppartial, preplace, starpromise, transform, wrap,
-)
-
 
 __version__ = '5.0.0'
 __author__ = 'Ask Solem'
