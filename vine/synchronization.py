@@ -93,4 +93,4 @@ class barrier:
     throw1 = throw
 
 
-Thenable.register(barrier)  # noqa: E305
+Thenable.register(barrier)
