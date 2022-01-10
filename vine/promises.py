@@ -77,6 +77,8 @@ class promise:
             'fun', 'args', 'kwargs', 'ready', 'failed',
             'value', 'ignore_result', 'reason', '_svpending', '_lvpending',
             'on_error', 'cancelled', 'weak', '__weakref__',
+            # adding '__dict__' to get dynamic assignment if needed
+            "__dict__",
         )
 
     def __init__(self, fun=None, args=None, kwargs=None,
