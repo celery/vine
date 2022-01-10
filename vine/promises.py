@@ -46,7 +46,7 @@ class promise:
 
         from vine import promise, wrap
 
-        class Protocol(object):
+        class Protocol:
 
             def __init__(self):
                 self.buffer = []

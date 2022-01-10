@@ -57,6 +57,11 @@ class barrier:
         if callback:
             self.then(callback)
 
+        __slots__ = (
+            'p', 'args', 'kwargs', '_value', 'size',
+            'ready', 'reason', 'cancelled', 'finalized', '__weakref__',
+        )
+
     def __call__(self, *args, **kwargs):
         if not self.ready and not self.cancelled:
             self._value += 1
