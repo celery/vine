@@ -10,7 +10,7 @@ __all__ = [
 
 
 def maybe_promise(p):
-    """Return None if p is unefined, otherwise make sure it's a promise."""
+    """Return None if p is undefined, otherwise make sure it's a promise."""
     if p:
         if not isinstance(p, Thenable):
             return promise(p)
