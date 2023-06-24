@@ -28,3 +28,4 @@ cover/
 coverage.xml
 htmlcov/
 .cache/
+.python-version
