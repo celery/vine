@@ -57,7 +57,7 @@ class barrier:
         if callback:
             self.then(callback)
 
-        __slots__ = (
+        __slots__ = (  # noqa
             'p', 'args', 'kwargs', '_value', 'size',
             'ready', 'reason', 'cancelled', 'finalized',
             '__weakref__',
