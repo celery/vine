@@ -1,6 +1,23 @@
 Changes
 =======
 
+.. _version-5.1.0:
+
+5.1.0
+=====
+:release-date: 2023-11-05 2:45 P.M UTC+6:00
+:release-by: ASIF SAIF UDDIN
+
+- Dropped Python 3.6 support.
+- Added new Python versions support.
+- Dropped old dependencies.
+- Added new GHA based CI.
+- Added slots support and impproved dynamic assignment.
+
+
+  Contributed by **Asif Saif Uddin**
+
+
 .. _version-5.0.0:
 
 5.0.0
