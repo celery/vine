@@ -4,7 +4,7 @@
 
 |build-status| |coverage| |license| |wheel| |pyversion| |pyimp|
 
-:Version: 5.0.0
+:Version: 5.1.0
 :Web: https://vine.readthedocs.io/
 :Download: https://pypi.org/project/vine/
 :Source: https://github.com/celery/vine/

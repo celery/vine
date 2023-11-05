@@ -15,9 +15,9 @@ from .funtools import (
 from .promises import promise
 from .synchronization import barrier
 
-__version__ = '5.0.0'
+__version__ = '5.1.0'
 __author__ = 'Ask Solem'
-__contact__ = 'ask@celeryproject.org'
+__contact__ = 'auvipy@gmail.com'
 __homepage__ = 'https://github.com/celery/vine'
 __docformat__ = 'restructuredtext'
 
