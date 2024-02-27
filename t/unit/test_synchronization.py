@@ -8,7 +8,7 @@ from vine.synchronization import barrier
 
 class test_barrier:
 
-    def setup(self):
+    def setup_method(self):
         self.m1, self.m2, self.m3 = Mock(), Mock(), Mock()
         self.ps = [promise(self.m1), promise(self.m2), promise(self.m3)]
 
