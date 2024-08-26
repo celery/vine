@@ -32,6 +32,13 @@ class barrier:
     Note that you cannot add new promises to a barrier after
     the barrier is fulfilled.
     """
+    __slots__ = (  # noqa
+            'p', 'args', 'kwargs', '_value', 'size',
+            'ready', 'reason', 'cancelled', 'finalized',
+            '__weakref__',
+            # adding '__dict__' to get dynamic assignment
+            "__dict__",
+        )
 
     def __init__(self, promises=None, args=None, kwargs=None,
                  callback=None, size=None):
@@ -56,14 +63,6 @@ class barrier:
         self.finalized = bool(promises or self.size)
         if callback:
             self.then(callback)
-
-        __slots__ = (  # noqa
-            'p', 'args', 'kwargs', '_value', 'size',
-            'ready', 'reason', 'cancelled', 'finalized',
-            '__weakref__',
-            # adding '__dict__' to get dynamic assignment
-            "__dict__",
-        )
 
     def __call__(self, *args, **kwargs):
         if not self.ready and not self.cancelled:
