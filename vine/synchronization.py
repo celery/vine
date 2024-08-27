@@ -33,12 +33,12 @@ class barrier:
     the barrier is fulfilled.
     """
     __slots__ = (
-            'p', 'args', 'kwargs', '_value', 'size',
-            'ready', 'reason', 'cancelled', 'finalized',
-            '__weakref__',
-            # adding '__dict__' to get dynamic assignment
-            "__dict__",
-        )
+        'p', 'args', 'kwargs', '_value', 'size',
+        'ready', 'reason', 'cancelled', 'finalized',
+        '__weakref__',
+        # adding '__dict__' to get dynamic assignment
+        "__dict__",
+    )
 
     def __init__(self, promises=None, args=None, kwargs=None,
                  callback=None, size=None):
