@@ -12,11 +12,10 @@ class CannotThen:
     pass
 
 
-class test_Thenable:
+def test_isa():
+    assert isinstance(CanThen(), Thenable)
+    assert not isinstance(CannotThen(), Thenable)
 
-    def test_isa(self):
-        assert isinstance(CanThen(), Thenable)
-        assert not isinstance(CannotThen(), Thenable)
 
-    def test_promise(self):
-        assert isinstance(promise(lambda x: x), Thenable)
+def test_promise():
+    assert isinstance(promise(lambda x: x), Thenable)
