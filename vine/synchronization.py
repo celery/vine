@@ -32,6 +32,7 @@ class barrier:
     Note that you cannot add new promises to a barrier after
     the barrier is fulfilled.
     """
+
     __slots__ = (
         'p', 'args', 'kwargs', '_value', 'size',
         'ready', 'reason', 'cancelled', 'finalized',
