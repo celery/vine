@@ -15,12 +15,11 @@ classes = """
     Development Status :: 5 - Production/Stable
     Programming Language :: Python
     Programming Language :: Python :: 3
-    Programming Language :: Python :: 3.7
-    Programming Language :: Python :: 3.8
     Programming Language :: Python :: 3.9
     Programming Language :: Python :: 3.10
     Programming Language :: Python :: 3.11
     Programming Language :: Python :: 3.12
+    Programming Language :: Python :: 3.13
     Programming Language :: Python :: 3 :: Only
     Programming Language :: Python :: Implementation :: CPython
     Programming Language :: Python :: Implementation :: PyPy
@@ -112,7 +111,7 @@ setuptools.setup(
     platforms=['any'],
     classifiers=classifiers,
     license='BSD',
-    python_requires=">=3.6",
+    python_requires=">=3.9",
     install_requires=[],
     tests_require=reqs('test.txt'),
     cmdclass={'test': pytest},
