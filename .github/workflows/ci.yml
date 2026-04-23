@@ -4,10 +4,10 @@ jobs:
 
   #################### Unittests ####################
   unittest:
-    runs-on: blacksmith-4vcpu-ubuntu-2204
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     strategy:
       matrix:
-        python-version: [3.8,3.9,"3.10","3.12","3.13"]
+        python-version: ["3.10","3.12","3.13"]
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v6
