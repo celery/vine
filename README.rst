@@ -8,6 +8,7 @@
 :Web: https://vine.readthedocs.io/
 :Download: https://pypi.org/project/vine/
 :Source: https://github.com/celery/vine/
+:DeepWiki: |deepwiki|
 :Keywords: promise, async, future
 
 About
@@ -40,4 +41,9 @@ callbacks and errbacks can all be promises.
 .. |pyimp| image:: https://img.shields.io/pypi/implementation/vine.svg
     :alt: Support Python implementations.
     :target: https://pypi.org/project/vine/
+
+.. |deepwiki| image:: https://devin.ai/assets/deepwiki-badge.png
+    :alt: Ask http://DeepWiki.com
+    :target: https://deepwiki.com/celery/vine
+    :width: 125px
 
