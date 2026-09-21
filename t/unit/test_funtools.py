@@ -41,19 +41,19 @@ def test_transform():
         x({})
 
 
-class test_maybe_promise:
+def test_when_none():
+    assert maybe_promise(None) is None
 
-    def test_when_none(self):
-        assert maybe_promise(None) is None
 
-    def test_when_promise(self):
-        p = promise()
-        assert maybe_promise(p) is p
+def test_when_promise():
+    p = promise()
+    assert maybe_promise(p) is p
 
-    def test_when_other(self):
-        m = Mock()
-        p = maybe_promise(m)
-        assert isinstance(p, Thenable)
+
+def test_when_other():
+    m = Mock()
+    p = maybe_promise(m)
+    assert isinstance(p, Thenable)
 
 
 def test_starpromise():
